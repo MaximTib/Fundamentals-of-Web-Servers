@@ -1,40 +1,7 @@
 <!DOCTYPE html>
     <html>
 
-        <script>
-            function OnlyLetters(fname,lname)
-            {
-                var letters = /^[A-Za-z]+$/;
-                if((fname.value.match(letters)) && (lname.value.match(letters)))
-                {
-                    {
-                        return true;
-                    }
-                }
-                else
-                {
-                alert("Names can only contain letters");
-                return false;
-                }
-            } 
-
-            function NumOnly(age)
-            {
-                var numbers = /^[0-9]+$/;
-                x = document.getElementById("age").value;
-
-                if((age.value.match(numbers))&&(age>=0)&&(age<=200))
-                {
-                    return true;
-                }
-
-                else
-                {
-                    alert("Enter a valid age [0-200]");
-                    return false;
-                }
-            }
-        </script>
+        <script src="Javascript.js"></script>
 
         <body>
 
