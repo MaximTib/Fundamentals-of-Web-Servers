@@ -23,7 +23,7 @@
                 var numbers = /^[0-9]+$/;
                 x = document.getElementById("age").value;
 
-                if(age.value.match(numbers))
+                if((age.value.match(numbers))&&(age>=0)&&(age<=200))
                 {
                     return true;
                 }
