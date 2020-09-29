@@ -2,16 +2,27 @@
 <!DOCTYPE html>
 <html>
     <title>LEARN ABOUT DOGS</title>
+    <script>
+        function NewImage()
+        {
+            document.getElementById("img1").src = "images/Corgi_image.jpg";
+        }
+
+        function OldImage()
+        {
+            document.getElementById("img1").src = "images/image_of_a_dog.jpg";
+        }   
+    </script>
     <body style="background-color:lightgrey;">
 
         <h1>Some Heading</h1>
         <h2>Second Heading</h2>
         <div><span style="color:red">This website explores different dog breeds and <a href="Second_Page.html">techniques</a> to help you become a better dog owner.</span></div>
-        <img src="image_of_a_dog.jpg" alt="Image of a dog" width="400" height="600"/>
+        <img id="img1" onmouseover="NewImage()" onmouseout="OldImage()" src="images/image_of_a_dog.jpg" alt="Image of a dog" width="400" height="600"/>
         <br/>
         <div>Below are listed the dog breed for which we provide information.</div>
         <ol>
-            <li>Horgi</li>
+            <li>Corgi</li>
             <li>Pitsky</li>
             <li>Beagador</li>
             <li>Golden Dox</li>

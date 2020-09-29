@@ -1,15 +1,53 @@
 <!DOCTYPE html>
     <html>
+
+        <script>
+            function OnlyLetters(fname,lname)
+            {
+                var letters = /^[A-Za-z]+$/;
+                if((fname.value.match(letters)) && (lname.value.match(letters)))
+                {
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                alert("Names can only contain letters");
+                return false;
+                }
+            } 
+
+            function NumOnly(age)
+            {
+                var numbers = /^[0-9]+$/;
+                x = document.getElementById("age").value;
+
+                if(age.value.match(numbers))
+                {
+                    return true;
+                }
+
+                else
+                {
+                    alert("Enter a valid age [0-200]");
+                    return false;
+                }
+            }
+        </script>
+
         <body>
 
             <h2>Form to fill out</h2>
 
             <form action="/action_page.php">
                 <label for="fname">First name:</label><br>
-                <input type="text id="fname" name="fname"><br> 
+                <input type="text" id="fname" name="fname"><br> 
                 <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname"><br><br>
-                 <input type="submit"><br><br><br>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="age">Age:</label><br>
+                <input type="text" id="age" name="age"><br><br>
+                <input type="submit" onclick="OnlyLetters(fname,lname) && NumOnly(age)"><br><br><br>
             </form>
 
             <div>Choose the statement that applies to you</div>
