@@ -9,13 +9,13 @@
 
     <h2>Form to fill out</h2>
 
-    <form onsubmit="return (OnlyLetters(fname,lname) && NumOnly());">
+    <form action="ServerSideForm.php" onsubmit="return (OnlyLetters(fname,lname) && NumOnly(age));">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname"><br>
         <label for="age">Age:</label><br>
-        <input type="text" id="age" name="age"><br><br>
+        <input type="number" id="age" name="age" min="1" max="200"><br><br>
 
         <div>Choose the statement that applies to you</div>
 
@@ -28,12 +28,12 @@
 
         <div>Choose all that apply to you</div>
 
-        <input type="checkbox" id="option1" name="option1">
-        <label for="option1">I work a full time worker/student</label><br>
-        <input type="checkbox" id="option2" name="option2">
-        <label for="option2">I am feeling lonely and seeking companionship</label><br>
-        <input type="checkbox" id="option3" name="option3">
-        <label for="option3">I have at least 30 minutes of free time every day</label><br>
+        <input type="checkbox" id="option1" name="1option">
+        <label for="1option">I work a full time worker/student</label><br>
+        <input type="checkbox" id="option2" name="2option">
+        <label for="2option">I am feeling lonely and seeking companionship</label><br>
+        <input type="checkbox" id="option3" name="3option">
+        <label for="3option">I have at least 30 minutes of free time every day</label><br>
         <input type="submit"><br><br><br>
     </form>
 </body>

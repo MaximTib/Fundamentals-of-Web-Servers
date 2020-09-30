@@ -1,5 +1,8 @@
 function OnlyLetters(fname, lname) {
     var letters = /^[A-Za-z]+$/;
+
+    alert(fname);
+    alert(lname);
     if ((fname.value.match(letters)) && (lname.value.match(letters))) {
         {
             return true;
@@ -11,11 +14,12 @@ function OnlyLetters(fname, lname) {
     }
 }
 
-function NumOnly() {
+function NumOnly(age) {
     var numbers = /^[0-9]+$/;
-    x = document.getElementById("age");
 
-    if ((x.value.match(numbers)) && (x >= 0) && (x <= 200)) {   
+    alert(age);
+
+    if ((age.value.match(numbers)) {   
         alert("valid");
         return true;
     }
