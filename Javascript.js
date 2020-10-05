@@ -19,7 +19,7 @@ function NumOnly(age) {
 
     alert(age);
 
-    if ((age.value.match(numbers)) {   
+    if ((age.value.match(numbers)) {
         alert("valid");
         return true;
     }
@@ -35,4 +35,34 @@ function NewImage() {
 
 function OldImage() {
     document.getElementById("img1").src = "images/image_of_a_dog.jpg";
-}  
+}
+
+function CheckboxValidation() {
+    var checkBox1 = document.getElementById("busy");
+    var checkBox2 = document.getElementById("depressed");
+    var checkBox3 = document.getElementById("idealhuman");
+
+    var checks = [checkBox1, checkBox2, checkBox3];
+    var i = ["1", "2", "3"];
+
+    //if checkbox checked, display php content
+    for (i = 0; i < checks.length; i++) {
+        if (checks[i].checked == true) {
+            if (i == 0) {
+                 <? php echo "I have/had a dog and want another"; ?>
+            }
+            else if (i == 1) {
+                <? php echo "You selected: I am feeling lonely and seeking companionship"; ?>
+            }
+            else if (i == 2) {
+                <? php echo "You selected: I have at least 30 minutes of free time every day"; ?>
+            }
+            else {
+                <? php echo "You haven't selected any options for the second checkbox"; ?>
+            }
+
+
+
+        }
+    }
+}
