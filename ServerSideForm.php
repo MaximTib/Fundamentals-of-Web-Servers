@@ -18,7 +18,7 @@
                 <?php endif; ?>
        
                 <?php
-                     echo "<script>CheckboxValidation();</script>";
+                     HI echo "<script>CheckboxValidation();</script>"; Again
                 ?>
             </body>
 </html>
