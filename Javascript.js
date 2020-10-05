@@ -43,10 +43,10 @@ function CheckboxValidation() {
     var checkBox3 = document.getElementById("idealhuman");
 
     var checks = [checkBox1, checkBox2, checkBox3];
-    var i = ["1", "2", "3"];
+    var i;
 
     //if checkbox checked, display php content
-    for (i = 0; i < checks.length; i++) {
+    for (i = 0; i < checks.length; i++) { alert("HI")
         if (checks[i].checked == true) {
             if (i == 0) {
                  <? php echo "I have/had a dog and want another"; ?>
