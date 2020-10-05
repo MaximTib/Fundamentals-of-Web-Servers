@@ -16,9 +16,9 @@
                 <?php else: ?>
                     I am here to explore
                 <?php endif; ?>
-       
+                
                 <?php
-                     HI echo "<script>CheckboxValidation();</script>"; Again
+                    echo "<script>CheckboxValidation();</script>";
                 ?>
             </body>
 </html>

@@ -38,16 +38,13 @@ function OldImage() {
 }
 
 function CheckboxValidation() {
-    var checkBox1 = document.getElementById("busy");
-    var checkBox2 = document.getElementById("depressed");
-    var checkBox3 = document.getElementById("idealhuman");
 
-    var checks = [checkBox1, checkBox2, checkBox3];
-    var i; 
+    var checks = [document.getElementById("busy"), document.getElementById("idealhuman")];
+    var i;
     alert("so far so good");
 
     //if checkbox checked, display php content
-    for (i = 0; i < checks.length; i++) { 
+    for (i = 0; i < checks.length; i++) {
         if (checks[i].checked == true) {
             if (i == 0) {
                  <? php echo "I have/had a dog and want another"; ?>
@@ -65,9 +62,5 @@ function CheckboxValidation() {
 
 
         }
-    }
-
-    function newFunction() {
-        alert("HI");
     }
 }
