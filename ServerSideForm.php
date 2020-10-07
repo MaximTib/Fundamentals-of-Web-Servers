@@ -4,14 +4,14 @@
         <script src="Javascript.js"></script>
     </head>
             <body>
-                Welcome <?php echo $_POST['fname'] . $_POST['lname']; ?>!<br>
+                Welcome <?php echo htmlspecialchars($_POST['fname']) . htmlspecialchars($_POST['lname']); ?>!<br>
                 It is good to know that you are <?php echo $_POST['age']; ?>years old.<br><br>
 
-                You said: "<?php echo $_POST['experience']; ?>"<br>
+                You said: "<?php echo htmlspecialchars($_POST['experience']); ?>"<br>
         
-                <?php if ($_POST['experience'] == "dog"): ?>
+                <?php if (htmlspecialchars($_POST['experience']) == "dog"): ?>
                     I have/had a dog and want another
-                <?php elseif ($_POST['experience'] == "nodog"): ?>
+                <?php elseif (htmlspecialchars($_POST['experience']) == "nodog"): ?>
                     I never had a dog, but I want one
                 <?php else: ?>
                     I am here to explore

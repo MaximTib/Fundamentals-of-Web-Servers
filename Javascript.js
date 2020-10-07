@@ -39,7 +39,7 @@ function OldImage() {
 
 function CheckboxValidation() {
 
-    var checks = [document.getElementById("busy"), document.getElementById("idealhuman")];
+    var checks = [document.getElementById("busy"), document.getElementById("depressed"), document.getElementById("idealhuman")];
     var i;
     alert("so far so good");
 
