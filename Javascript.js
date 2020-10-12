@@ -36,31 +36,3 @@ function NewImage() {
 function OldImage() {
     document.getElementById("img1").src = "images/image_of_a_dog.jpg";
 }
-
-function CheckboxValidation() {
-
-    var checks = [document.getElementById("busy"), document.getElementById("depressed"), document.getElementById("idealhuman")];
-    var i;
-    alert("so far so good");
-
-    //if checkbox checked, display php content
-    for (i = 0; i < checks.length; i++) {
-        if (checks[i].checked == true) {
-            if (i == 0) {
-                 <? php echo "I have/had a dog and want another"; ?>
-            }
-            else if (i == 1) {
-                <? php echo "You selected: I am feeling lonely and seeking companionship"; ?>
-            }
-            else if (i == 2) {
-                <? php echo "You selected: I have at least 30 minutes of free time every day"; ?>
-            }
-            else {
-                <? php echo "You haven't selected any options for the second checkbox"; ?>
-            }
-
-
-
-        }
-    }
-}

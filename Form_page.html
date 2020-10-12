@@ -9,7 +9,7 @@
 
     <h2>Form to fill out</h2>
 
-    <form action="ServerSideForm.php" onsubmit="return (OnlyLetters(fname,lname) && NumOnly(age));" method="post">
+    <form action="<?php echo htmlspecialchars(ServerSideForm.php)" onsubmit="return (OnlyLetters(fname,lname) && NumOnly(age));" method="post">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
         <label for="lname">Last name:</label><br>
@@ -29,7 +29,7 @@
         <div>Choose all that apply to you</div>
 
         <input type="checkbox" id="busy" name="opt1" value="option1">
-        <label for="opt1">I work a full time worker/student</label><br>
+        <label for="opt1">I work am full time worker/student</label><br>
         <input type="checkbox" id="depressed" name="opt2" value="option2">
         <label for="opt2">I am feeling lonely and seeking companionship</label><br>
         <input type="checkbox" id="idealhuman" name="opt3" value="option3">
