@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="Javascript.js"></script>
-    </head>
             <body>
                 <?php
                     $fnamerr = $lnamerr = $agerr = $experr = $busyerr = $depressederr  = $idealhumanerr = "";
