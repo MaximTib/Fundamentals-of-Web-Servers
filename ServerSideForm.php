@@ -32,7 +32,7 @@
                     $opt = test_input($_POST['opt1']);
                 }
                     
-                if (empty($_POST['busy']) && ($_POST['depressed']) && ($_POST['idealhuman'])) {
+                if (empty($_POST['busy']) && empty($_POST['depressed']) && empty($_POST['idealhuman'])) {
                     $experr = "At least one field is required";
                 } else {
                     $exp = test_input($_POST['experience']);
