@@ -63,15 +63,15 @@
                 $idealhuman = $_POST['idealhuman'];
                
                                                                         //foreach
-                if ((isset($busy) && (test_input($busy) == "busy")) {
+                if (isset($busy) && test_input($busy) == "busy") {
                     echo "I work am full time worker/student<br>"; 
                 } 
                        
-                if ((isset($depressed) && (test_input($depressed) == "depressed")) {
+                if (isset($depressed) && test_input($depressed) == "depressed") {
                     echo "I am feeling lonely and seeking companionship<br>";
                 } 
                        
-                if ((isset($idealhuman) && (test_input($idealhuman) == "idealhuman")) {
+                if (isset($idealhuman) && test_input($idealhuman) == "idealhuman") {
                     echo "I have at least 30 minutes of free time every day<br>";
                 }
                    
