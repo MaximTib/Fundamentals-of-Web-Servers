@@ -2,46 +2,46 @@
     <html>
         <body>
             <?php
-                if (empty($POST_['fname'])) {
+                if (empty($_POST['fname'])) {
                     $fnamerr = "First name is required";
                 } else {
                  $firstname = test_input($_POST['fname']);
                 }
 
-                if (empty($POST_['lname'])) {
+                if (empty($_POST['lname'])) {
                     $lnamerr = "Last name is required";
                 } else {
                     $lastname = test_input($_POST['lname']);
                 }
 
-                if (empty($POST_['age'])) {
+                if (empty($_POST['age'])) {
                     $agerr = "Age is required";
                 } else {
                     $age = test_input($_POST['age']);
                 }
 
-                if (empty($POST_['experience'])) {
+                if (empty($_POST['experience'])) {
                     $experr = "This field is required";
                 } else {
                     $exp = test_input($_POST['experience']);
                 }
                     
-                if (empty($POST_['experience']) && ($POST_['depressed']) && ($POST_['idealhuman'])) {
+                if (empty($_POST['experience']) && ($_POST['depressed']) && ($_POST['idealhuman'])) {
                     $experr = "At least one field is required";
                 } else {
                     $exp = test_input($_POST['experience']);
                 }
            
                 $busy = test_input($_POST['fname']);
-                $depressed = test_input($POST_['depressed']);
-                $idealhuman = test_input($POST_['idealhuman']);
+                $depressed = test_input($_POST['depressed']);
+                $idealhuman = test_input($_POST['idealhuman']);
 
                 $checkbox_array = array($busy, $depressed, $idealhuman);
                     
                 function test_input($data) {
                     $data = trim($data);
                     $data = stripslashes($data);
-                    $data = htmlspecialcars($data);
+                    $data = htmlspecialchars($data);
                     return $data;
                 }
 
