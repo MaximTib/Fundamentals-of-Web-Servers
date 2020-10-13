@@ -25,14 +25,21 @@
                 } else {
                     $exp = test_input($_POST['experience']);
                 }
+
+                if (empty($_POST['opt1'])) {
+                    $experr = "This field is required";
+                } else {
+                    $opt = test_input($_POST['opt1']);
+                }
                     
-                if (empty($_POST['experience']) && ($_POST['depressed']) && ($_POST['idealhuman'])) {
+                if (empty($_POST['busy']) && ($_POST['depressed']) && ($_POST['idealhuman'])) {
                     $experr = "At least one field is required";
                 } else {
                     $exp = test_input($_POST['experience']);
                 }
-           
-                $busy = test_input($_POST['fname']);
+                
+
+                $busy = test_input($_POST['busy']);
                 $depressed = test_input($_POST['depressed']);
                 $idealhuman = test_input($_POST['idealhuman']);
 
@@ -61,13 +68,13 @@
                     
                 function CheckboxValidation() {
                     $i = "";
-               
-                    for($i=0;$i<3;$i++) {
-                        if ((isset($checkbox_array[i])) && ($checkbox_array == "busy")) {
+                   
+                    for($i=0;$i<3;$i++) {                                                                               //foreach
+                        if ((isset($checkbox_array[i])) && ($checkbox_array[i] == "busy")) {
                             echo "I work am full time worker/student<br>"; 
-                        } elseif ((isset($checkbox_array[i])) && ($checkbox_array == "depressed")) {
+                        } elseif ((isset($checkbox_array[i])) && ($checkbox_array[i] == "depressed")) {
                             echo "I am feeling lonely and seeking companionship<br>";
-                        } elseif ((isset($checkbox_array[i])) && ($checkbox_array == "idealhuman")) {
+                        } elseif ((isset($checkbox_array[i])) && ($checkbox_array[i] == "idealhuman")) {
                             echo "I have at least 30 minutes of free time every day<br>";
                         }
                     }
