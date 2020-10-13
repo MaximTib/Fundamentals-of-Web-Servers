@@ -39,11 +39,9 @@
                 }
                 
 
-                $busy = test_input($_POST['busy']);
-                $depressed = test_input($_POST['depressed']);
-                $idealhuman = test_input($_POST['idealhuman']);
+                
 
-                $checkbox_array = array($busy, $depressed, $idealhuman);
+                
                     
                 function test_input($data) {
                     $data = trim($data);
@@ -65,20 +63,25 @@
                     echo "I am here to explore<br>";
                 }
 
-                    
-                function CheckboxValidation() {
-                    $i = "";
-                   
-                    for($i=0;$i<3;$i++) {                                                                               //foreach
-                        if ((isset($checkbox_array[i])) && ($checkbox_array[i] == "busy")) {
-                            echo "I work am full time worker/student<br>"; 
-                        } elseif ((isset($checkbox_array[i])) && ($checkbox_array[i] == "depressed")) {
-                            echo "I am feeling lonely and seeking companionship<br>";
-                        } elseif ((isset($checkbox_array[i])) && ($checkbox_array[i] == "idealhuman")) {
-                            echo "I have at least 30 minutes of free time every day<br>";
-                        }
-                    }
+                
+                $busy = $_POST['busy'];
+                $depressed = $_POST['depressed'];
+                $idealhuman = $_POST['idealhuman'];
+               
+                                                                        //foreach
+                if ((isset($busy) && (test_input($busy) == "busy")) {
+                    echo "I work am full time worker/student<br>"; 
+                } 
+                       
+                if ((isset($depressed) && (test_input($depressed) == "depressed")) {
+                    echo "I am feeling lonely and seeking companionship<br>";
+                } 
+                       
+                 if ((isset($idealhuman) && (test_input($idealhuman) == "idealhuman")) {
+                    echo "I have at least 30 minutes of free time every day<br>";
                 }
+                   
+        
             ?>
         </body>
     </html>
