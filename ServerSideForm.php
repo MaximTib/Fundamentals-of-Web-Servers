@@ -26,11 +26,11 @@
                     $exp = test_input($_POST['experience']);
                 }
                     
-                if (empty(($POST_['experience']) && ($POST_['depressed']) && ($POST_['idealhuman'])) {
+                if (empty($POST_['experience']) && ($POST_['depressed']) && ($POST_['idealhuman'])) {
                     $experr = "At least one field is required";
-                } //else {
-                    //$exp = test_input($_POST['experience']);
-                //}
+                } else {
+                    $exp = test_input($_POST['experience']);
+                }
            
                 $busy = test_input($_POST['fname']);
                 $depressed = test_input($POST_['depressed']);
