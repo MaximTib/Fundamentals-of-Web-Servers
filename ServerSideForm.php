@@ -25,12 +25,6 @@
                 } else {
                     $exp = test_input($_POST['experience']);
                 }
-
-                if (empty($_POST['opt1'])) {
-                    $experr = "This field is required";
-                } else {
-                    $opt = test_input($_POST['opt1']);
-                }
                     
                 if (empty($_POST['busy']) && empty($_POST['depressed']) && empty($_POST['idealhuman'])) {
                     $experr = "At least one field is required";
@@ -77,7 +71,7 @@
                     echo "I am feeling lonely and seeking companionship<br>";
                 } 
                        
-                 if ((isset($idealhuman) && (test_input($idealhuman) == "idealhuman")) {
+                if ((isset($idealhuman) && (test_input($idealhuman) == "idealhuman")) {
                     echo "I have at least 30 minutes of free time every day<br>";
                 }
                    
