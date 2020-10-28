@@ -34,8 +34,7 @@
                 }
             ?>
          
-            <p>
-                <form onsubmit="A_Function()">
+            <form onsubmit="A_Function()">
                     <label for="fname">First name:</label><br>
                     <input type="text" id="fname" name="fname"><br>
                     <label for="lname">Last name:</label><br>
@@ -48,7 +47,6 @@
                         <option value="Empl3"><?php echo $EmployeeName3; ?></option>
                     </select>
                     <br></br>
-                    <br></br>
                     <div id="username">
                         <p id="NameDisplay">
                             Your name is: 
@@ -56,9 +54,8 @@
                     </div>
                     <br></br>
                     <input type="submit">
-                </form>
-            </p>
-
+            </form>     
+             
             <script>
                 function Afunction() {
                     var firstname = document.getElementByID("fname");
