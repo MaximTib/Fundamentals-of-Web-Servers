@@ -47,8 +47,8 @@
                     <label for="EmplNames">Choose an Employee:</label>
                     <select id="EmplNames" name="EmplNames">
                         <option value="Empl1"><?php echo $EmployeeName1; ?></option>
-                        <option value="Empl2"><?php echo $EmployeeName1; ?></option>
-                        <option value="Empl3"><?php echo $EmployeeName1; ?></option>
+                        <option value="Empl2"><?php echo $EmployeeName2; ?></option>
+                        <option value="Empl3"><?php echo $EmployeeName3; ?></option>
                     </select>
                     <input type="submit">
                 </form>
