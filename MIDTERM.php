@@ -17,7 +17,7 @@
                 
                 //Select employee IDs and Names
                 $sql = "SELECT EmployeeID, EmployeeName FROM Employees;";
-                $result = mysqli_querry($conn,$sql);
+                $result = mysqli_query($conn,$sql);
 
                 if (mysqli_num_rows($result) > 0) {
                     //opt names of employees
