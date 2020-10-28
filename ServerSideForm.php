@@ -76,7 +76,7 @@
                 }
 
 
-                $servername = "localhost";
+                $servername = "192.168.1.5";
                 $username = "Maxim";
                 $password = "123SQLpassword321";
                 $dbname = "BasicUserInfo";
