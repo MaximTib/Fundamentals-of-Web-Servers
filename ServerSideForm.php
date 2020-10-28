@@ -84,17 +84,17 @@
                 //Create connection with database
                 $conn = mysqli_connection($servername, $username, $password, $dbname);
                 //Check connection
-                if (!conn) {
+                if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
                 
-                $sql = "SELECT ID FROM PersonalData;"
+                $sql = "SELECT ID FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
                 $dbID = mysqli_num_rows($conn,$sql);
                 
                 //finding out the ID value to insert new values in database
                 $i = "";
-                for($i=0;$i<=$dbID;$i++) {
+                for($i=0; $i<=$dbID; $i++) {
                     if( $i == $dbID ) {
                         $InsertID = $dbID + 1;
                     }
@@ -113,6 +113,8 @@
                 echo "Your recorded last name is " . $sql_out_lname . "<br></br>";
                 $sql_out_age = "SELECT age FROM PersonalData WHERE ID = $InsertID;";
                 echo "Your age is " . $sql_out_age . "<br></br>";
+
+                mysqli_close($conn);
 
             ?>
         </body>
