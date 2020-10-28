@@ -2,7 +2,6 @@
     <html>
         <body>
             <?php
-                
                 $servername = "localhost";
                 $username = "Maxim";
                 $password = "123SQLpassword321";
@@ -35,33 +34,36 @@
                 }
             ?>
          
-                
-            
             <p>
-                <form>
+                <form onsubmit="A_Function()">
                     <label for="fname">First name:</label><br>
                     <input type="text" id="fname" name="fname"><br>
                     <label for="lname">Last name:</label><br>
                     <input type="text" id="lname" name="lname"><br>
-
+                    <br></br>
                     <label for="EmplNames">Choose an Employee:</label>
                     <select id="EmplNames" name="EmplNames">
                         <option value="Empl1"><?php echo $EmployeeName1; ?></option>
                         <option value="Empl2"><?php echo $EmployeeName2; ?></option>
                         <option value="Empl3"><?php echo $EmployeeName3; ?></option>
                     </select>
+                    <br></br>
+                    <br></br>
+                    <div id="username">
+                        <p id="NameDisplay">
+                            Your name is: 
+                        </p>
+                    </div>
+                    <br></br>
                     <input type="submit">
                 </form>
             </p>
 
-            <div id="username" Afunction>
-            </div>
-
             <script>
                 function Afunction() {
-                    firstname = document.getElementByID("fname");
-                    lastname = document.getElementByID("lname");
-                    document.getElementById("username").innerHTML = "Your name is" firstname lastname;
+                    var firstname = document.getElementByID("fname");
+                    var lastname = document.getElementByID("lname");
+                    document.getElementById("username").innerHTML = "Your name is: " + firstname + " " + lastname;
                 }
             </script>
             
