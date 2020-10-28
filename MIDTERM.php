@@ -22,11 +22,11 @@
                 if (mysqli_num_rows($result) > 0) {
                     //opt names of employees
                     while ($row = mysqli_fetch_assoc($result)) {
-                        if ( $row["EmployeeID"] = 1) {
+                        if ( $row["EmployeeID"] == 1) {
                             $EmployeeName1 = $row["EmployeeName"];
-                        } elseif  ( $row["EmployeeID"] = 2) {
+                        } elseif  ( $row["EmployeeID"] == 2) {
                             $EmployeeName2 = $row["EmployeeName"];
-                        } elseif  ( $row["EmployeeID"] = 3) {
+                        } elseif  ( $row["EmployeeID"] == 3) {
                             $EmployeeName3 = $row["EmployeeName"];
                         } else {
                             echo "No Names";
