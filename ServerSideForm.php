@@ -58,23 +58,18 @@
                 }
 
                 
-                $busy = $_POST['busy'];
-                $depressed = $_POST['depressed'];
-                $idealhuman = $_POST['idealhuman'];
-               
                                                                         //foreach
-                if (isset($busy) && test_input($busy) == "busy") {
+                if (isset($_POST['busy']) && test_input($_POST['busy']) == "busy") {
                     echo "I work am full time worker/student<br>"; 
                 } 
                        
-                if (isset($depressed) && test_input($depressed) == "depressed") {
+                if (isset($_POST['depressed']) && test_input($_POST['depressed']) == "depressed") {
                     echo "I am feeling lonely and seeking companionship<br>";
                 } 
                        
-                if (isset($idealhuman) && test_input($idealhuman) == "idealhuman") {
+                if (isset($_POST['idealhuman']) && test_input($_POST['idealhuman']) == "idealhuman") {
                     echo "I have at least 30 minutes of free time every day<br>";
                 }
-
 
                 $servername = "localhost";
                 $username = "Maxim";
@@ -82,7 +77,7 @@
                 $dbname = "BasicUserInfo";
 
                 //Create connection with database
-                $conn = mysqli_connection($servername, $username, $password, $dbname);
+                $conn = mysqli_connect($servername, $username, $password, $dbname);
                 //Check connection
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
