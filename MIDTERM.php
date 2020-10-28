@@ -54,7 +54,7 @@
                 </form>
             </p>
 
-            <div id="username" onsubmit=Afunction()>
+            <div id="username" Afunction>
             </div>
 
             <script>
