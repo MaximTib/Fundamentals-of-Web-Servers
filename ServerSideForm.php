@@ -54,7 +54,7 @@
                 } elseif ($exp == "nodog") {
                     echo "I never had a dog, but I want one<br>";
                 } else {
-                    echo "I am here to explore<br>";
+                    echo "I am here to explore<br><br>";
                 }
 
                 
@@ -74,8 +74,46 @@
                 if (isset($idealhuman) && test_input($idealhuman) == "idealhuman") {
                     echo "I have at least 30 minutes of free time every day<br>";
                 }
-                   
-        
+
+
+                $servername = "localhost";
+                $username = "Maxim";
+                $password = "123SQLpassword321";
+                $dbname = "BasicUserInfo";
+
+                //Create connection with database
+                $conn = mysqli_connection($servername, $username, $password, $dbname);
+                //Check connection
+                if (!conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+                
+                $sql = "SELECT ID FROM PersonalData;"
+                $result = mysqli_query($conn,$sql);
+                $dbID = mysqli_num_rows($conn,$sql);
+                
+                //finding out the ID value to insert new values in database
+                $i = "";
+                for($i=0;$i<=$dbID;$i++) {
+                    if( $i == $dbID ) {
+                        $InsertID = $dbID + 1;
+                    }
+                }
+                
+                //Inserting data in the database
+                $sql_insert = "INSERT INTO PersonalData values ($InsertID, '$firstname', '$lastname', $age);";
+                $sql_insert;
+
+                //displaying data from database to user
+                $sql_out_id = "SELECT ID FROM PersonalData WHERE ID = $InsertID;";
+                echo "Your ID is " . $sql_out_id . "<br></br>";
+                $sql_out_fname = "SELECT first_name FROM PersonalData WHERE ID = $InsertID;";
+                echo "Your recorded first name is " . $sql_out_fname . "<br></br>";
+                $sql_out_lname = "SELECT last_name FROM PersonalData WHERE ID = $InsertID;";
+                echo "Your recorded last name is " . $sql_out_lname . "<br></br>";
+                $sql_out_age = "SELECT age FROM PersonalData WHERE ID = $InsertID;";
+                echo "Your age is " . $sql_out_age . "<br></br>";
+
             ?>
         </body>
     </html>
