@@ -54,7 +54,7 @@
                 </form>
             </p>
 
-            <div id="username" onmouseover=Afunction()>
+            <div id="username" onsubmit=Afunction()>
             </div>
 
             <script>
