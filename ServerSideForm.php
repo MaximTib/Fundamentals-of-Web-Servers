@@ -109,8 +109,8 @@
                     while($row = mysqli_fetch_assoc($result) && $row["first_name"] == $firstname && $row["last_name"] == $lastname) {
                         $ID = $row["ID"];
                         $sqlupdate = "UPDATE PersonalData SET age = '$age' WHERE ID = $ID;";
-                        $result = mysqli_query($conn,$sqlupdate);
-                        echo $result " :Update successful";
+                        $resultupd = mysqli_query($conn,$sqlupdate);
+                        echo $resultupd;
                     } 
                 }   else {
                 echo "0 results";
