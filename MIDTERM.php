@@ -47,7 +47,7 @@
                         <option value="Empl3"><?php echo $EmployeeName3; ?></option>
                     </select>
                     <br></br>
-                    <div id="username">
+                    <div>
                         <p id="NameDisplay">
                             Your name is: 
                         </p>
@@ -55,7 +55,7 @@
                     <br></br>
                     <input type="submit">
             </form>     
-             
+
             <script>
                 function Afunction() {
                     var firstname = document.getElementByID("fname");
@@ -63,6 +63,5 @@
                     document.getElementById("username").innerHTML = "Your name is: " + firstname + " " + lastname;
                 }
             </script>
-            
         </body>
     </html>
