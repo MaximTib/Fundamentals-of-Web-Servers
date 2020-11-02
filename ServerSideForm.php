@@ -102,6 +102,7 @@
                 $sql = "SELECT ID,first_name,last_name FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
                 $dbID = mysqli_num_rows($conn,$sql);
+                $NewUserID = $dbID + 1;
                 
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
@@ -113,6 +114,9 @@
                         echo $resultupd;
                     } 
                 }   else {
+                    $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$first_name', '$last_name', $age;";
+                    $resultupd = mysqli_query($conn,$resultupd);
+                    $resultupd;
                 echo "0 results";
                 }
 
@@ -125,7 +129,7 @@
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
-                    while($row = mysqli_fetch_assoc($result)) {
+                    while($row = mysqli_fetch_assoc($result) && $row["ID"] == $dbID) {
                         echo "id: " . $row["ID"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. " - Age: " . $row["age"]. "<br></br>";
                     }
                 } else {
