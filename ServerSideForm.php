@@ -93,8 +93,8 @@
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
                         $dbID = $row["ID"];
-                        echo "database fetched ID = " . $dbID . "<br></br>";
                         $NewUserID = $dbID + 1;
+                        echo "New User ID = " . $NewUserID;
                     } 
                 }   else {
                 echo "0 results";
