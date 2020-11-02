@@ -107,7 +107,7 @@
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result) && $row["first_name"] == $firstname && $row["last_name"] == $lastname) {
-                        $sqlupdate = "UPDATE PersonalData SET age = '$age' WHERE ID = $row["ID"];";
+                        $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $row["ID"];";
                         $UserID = $row["ID"];
                         $resultupd = mysqli_query($conn,$sqlupdate);
                         echo $resultupd;
