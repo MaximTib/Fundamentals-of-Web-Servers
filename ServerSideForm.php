@@ -87,49 +87,45 @@
 
                 $sql = "SELECT ID FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
-                $dbID = mysqli_num_rows($conn,$sql);
                 
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
                         $dbID = $row["ID"];
+                        echo "database fetched ID = " . $dbID . "<br></br>";
+                        $NewUserID = $dbID + 1;
                     } 
                 }   else {
                 echo "0 results";
                 }
 
                 $sql = "SELECT ID,first_name,last_name FROM PersonalData;";
-                $result = mysqli_query($conn,$sql);
-                $dbID = mysqli_num_rows($conn,$sql);
-                $NewUserID = $dbID + 1;
+                $result = mysqli_query($conn,$sql);                
                 
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result) && $row["first_name"] == $firstname && $row["last_name"] == $lastname) {
-                        $ID = $row["ID"];
-                        $sqlupdate = "UPDATE PersonalData SET age = '$age' WHERE ID = $ID;";
+                        $sqlupdate = "UPDATE PersonalData SET age = '$age' WHERE ID = $row["ID"];";
+                        $UserID = $row["ID"];
                         $resultupd = mysqli_query($conn,$sqlupdate);
                         echo $resultupd;
                     } 
                 }   else {
                     $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$first_name', '$last_name', $age;";
                     $resultupd = mysqli_query($conn,$resultupd);
-                    $resultupd;
-                echo "0 results";
+                    $UserID = $row["ID"];
+                    echo $resultupd;
                 }
-
-
-                
+   
                 $sql = "SELECT ID,first_name,last_name,age FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
-                $dbID = mysqli_num_rows($conn,$sql);
-                
+
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
-                    while($row = mysqli_fetch_assoc($result) && $row["ID"] == $dbID) {
+                    while($row = mysqli_fetch_assoc($result) && $row["ID"] == $UserID) {
                         echo "id: " . $row["ID"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. " - Age: " . $row["age"]. "<br></br>";
                     }
                 } else {
