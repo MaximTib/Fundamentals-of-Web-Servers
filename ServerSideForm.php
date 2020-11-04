@@ -99,8 +99,6 @@
                 echo "0 results";
                 }
 
-                echo "<br></br> NewUserID is " . $NewUserID . "<br></br>";
-
                 $sql = "SELECT ID,first_name,last_name FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);                
                 
@@ -115,9 +113,11 @@
                                 $resultupd = mysqli_query($conn,$sqlupdate);
                                 echo $resultupd;
                                 $Existance = true;
+                                echo $Existance;
                                 return;
                             } else {
                                 $Existance = false;
+                                echo $Existance;
                             }
                         }   
                     }
