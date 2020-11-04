@@ -125,6 +125,7 @@
 
                 CheckForRecords();
 
+                echo "Existance is " . $Existance;
                 if  (($Existance == 0) && (mysqli_num_rows($result)>0)) {
                     $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$firstname', '$lastname', $age);";
                     $CreateEntry = mysqli_query($conn,$sql);
