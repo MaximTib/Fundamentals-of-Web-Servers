@@ -94,7 +94,6 @@
                     while($row = mysqli_fetch_assoc($result)) {
                         $dbID = $row["ID"];
                         $NewUserID = $dbID + 1;
-                        echo "New User ID = " . $NewUserID;
                     } 
                 }   else {
                 echo "0 results";
@@ -104,20 +103,32 @@
                 $result = mysqli_query($conn,$sql);                
                 
                 //finding out the ID value to insert new values in database
-                if (mysqli_num_rows($result)>0) {
+                function CheckForRecords(){
+                    if (mysqli_num_rows($result)>0) {
                     //output data of each row
-                    while($row = mysqli_fetch_assoc($result) && $row["first_name"] == $firstname && $row["last_name"] == $lastname) {
-                        $UserID = $row["ID"];
-                        $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
-                        $resultupd = mysqli_query($conn,$sqlupdate);
-                        echo $resultupd;
-                    } 
-                }   else {
-                    $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$first_name', '$last_name', $age;";
-                    $resultupd = mysqli_query($conn,$resultupd);
-                    $UserID = $row["ID"];
-                    echo $resultupd;
+                        while($row = mysqli_fetch_assoc($result)) {
+                            if ($row["first_name"] == $firstname && $row["last_name"] == $lastname) {
+                                $UserID = $row["ID"];
+                                $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
+                                $resultupd = mysqli_query($conn,$sqlupdate);
+                                echo $resultupd;
+                                return = true;
+                            } else {
+                                return false;
+                            }
+                        }   
+                    }
                 }
+
+                $Existance = CheckForRecords();
+
+                if ($Existance == false && mysqli_num_rows($result)>0) {
+                    $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$first_name', '$last_name', $age);";
+                    $CreateEntry = mysqli_query($conn,$CreateEntry);
+                    $UserID = $row["ID"];
+                    $CreateEntry;
+                }
+               
    
                 $sql = "SELECT ID,first_name,last_name,age FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
@@ -126,7 +137,7 @@
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result) && $row["ID"] == $UserID) {
-                        echo "id: " . $row["ID"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. " - Age: " . $row["age"]. "<br></br>";
+                        echo "id: " . $row['ID']. " - Name: " . $row['first_name']. " " . $row['last_name']. " - Age: " . $row['age']. "<br></br>";
                     }
                 } else {
                     echo "0 results";
