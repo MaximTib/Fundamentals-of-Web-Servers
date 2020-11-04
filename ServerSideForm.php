@@ -99,6 +99,8 @@
                 echo "0 results";
                 }
 
+                echo "<br></br> NewUserID is " . $NewUserID . "<br></br>";
+
                 $sql = "SELECT ID,first_name,last_name FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);                
                 
@@ -137,7 +139,7 @@
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result) && ($row["ID"] == $UserID || $row["ID"] == $NewUserID)) {
-                        echo "id: " . $row['ID']. " - Name: " . $row['first_name']. " " . $row['last_name']. " - Age: " . $row['age']. "<br></br>";
+                        echo "id: " . $row['ID'] . " - Name: " . $row['first_name'] . " " . $row['last_name'] . " - Age: " . $row['age'] . "<br></br>";
                     }
                 } else {
                     echo "0 results";
