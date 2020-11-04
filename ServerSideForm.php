@@ -125,8 +125,7 @@
                 if ($Existance == false && mysqli_num_rows($result)>0) {
                     $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$firstname', '$lastname', $age);";
                     $CreateEntry = mysqli_query($conn,$sql);
-                    $UserID = $NewUserID;
-                    echo $CreateEntry;
+                    $CreateEntry;
                 }
                
 
@@ -137,7 +136,7 @@
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
-                    while($row = mysqli_fetch_assoc($result) && $row["ID"] == $UserID) {
+                    while($row = mysqli_fetch_assoc($result) && ($row["ID"] == $UserID || $row["ID"] == $NewUserID)) {
                         echo "id: " . $row['ID']. " - Name: " . $row['first_name']. " " . $row['last_name']. " - Age: " . $row['age']. "<br></br>";
                     }
                 } else {
@@ -145,7 +144,6 @@
                 }
 
                 mysqli_close($conn);
-
             ?>
         </body>
     </html>
