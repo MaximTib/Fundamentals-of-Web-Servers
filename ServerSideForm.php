@@ -112,7 +112,7 @@
                                 $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
                                 $resultupd = mysqli_query($conn,$sqlupdate);
                                 echo $resultupd;
-                                return = true;
+                                return true;
                             } else {
                                 return false;
                             }
