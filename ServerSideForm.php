@@ -123,12 +123,13 @@
                 $Existance = CheckForRecords();
 
                 if ($Existance == false && mysqli_num_rows($result)>0) {
-                    $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$first_name', '$last_name', $age);";
-                    $CreateEntry = mysqli_query($conn,$CreateEntry);
-                    $UserID = $row["ID"];
-                    $CreateEntry;
+                    $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$firstname', '$lastname', $age);";
+                    $CreateEntry = mysqli_query($conn,$sql);
+                    $UserID = $NewUserID;
+                    echo $CreateEntry;
                 }
                
+
    
                 $sql = "SELECT ID,first_name,last_name,age FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
