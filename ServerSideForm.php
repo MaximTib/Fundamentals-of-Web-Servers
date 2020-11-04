@@ -109,12 +109,13 @@
                     if (mysqli_num_rows($result)>0) {
                     //output data of each row
                         while($row = mysqli_fetch_assoc($result)) {
-                            if ($row['first_name'] == $firstname && $row['last_name'] == $lastname) {
+                            if (($row['first_name'] == $firstname) && ($row['last_name'] == $lastname)) {
                                 $UserID = $row['ID'];
                                 $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
                                 $resultupd = mysqli_query($conn,$sqlupdate);
                                 echo $resultupd;
                                 $Existance = true;
+                                return;
                             } else {
                                 $Existance = false;
                             }
