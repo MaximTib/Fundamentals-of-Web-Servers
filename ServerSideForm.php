@@ -138,7 +138,12 @@
                 //finding out the ID value to insert new values in database
                 if (mysqli_num_rows($result)>0) {
                     //output data of each row
-                    while($row = mysqli_fetch_assoc($result) && ($row['ID'] == $UserID || $row['ID'] == $NewUserID)) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo $row['ID'];
+                        echo $row['first_name'];
+                        echo $row['last_name'];
+                        echo $row['age'];
+                        if($row['ID'] == $UserID || $row['ID'] == $NewUserID)) {
                         echo "id: " . $row['ID'] . " - Name: " . $row['first_name'] . " " . $row['last_name'] . " - Age: " . $row['age'] . "<br></br>";
                     }
                 } else {
