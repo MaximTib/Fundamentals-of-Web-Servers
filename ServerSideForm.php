@@ -111,19 +111,15 @@
                                 $UserID = $row['ID'];
                                 $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
                                 $resultupd = mysqli_query($conn,$sqlupdate);
-                                echo $resultupd;
-                                $Existance = 1;
-                                echo $Existance;
-                                return;
-                            } else {
-                                $Existance = 0;
-                                echo $Existance;
+                                echo $resultupd;;
+                                return 1;
                             }
                         }   
                     }
+                    return 0;
                 }
 
-                CheckForRecords();
+                $Existance = CheckForRecords();
 
                 echo "Existance is " . $Existance;
                 if  (($Existance == 0) && (mysqli_num_rows($result)>0)) {
