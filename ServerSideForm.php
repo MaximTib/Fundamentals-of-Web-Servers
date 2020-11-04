@@ -112,11 +112,11 @@
                                 $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
                                 $resultupd = mysqli_query($conn,$sqlupdate);
                                 echo $resultupd;
-                                $Existance = true;
+                                $Existance = 1;
                                 echo $Existance;
                                 return;
                             } else {
-                                $Existance = false;
+                                $Existance = 0;
                                 echo $Existance;
                             }
                         }   
@@ -125,7 +125,7 @@
 
                 CheckForRecords();
 
-                if ($Existance == false && mysqli_num_rows($result)>0) {
+                if  (($Existance == 0) && (mysqli_num_rows($result)>0)) {
                     $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$firstname', '$lastname', $age);";
                     $CreateEntry = mysqli_query($conn,$sql);
                     $CreateEntry;
