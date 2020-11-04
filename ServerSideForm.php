@@ -143,9 +143,10 @@
                         echo $row['first_name'];
                         echo $row['last_name'];
                         echo $row['age'];
-                        if($row['ID'] == $UserID || $row['ID'] == $NewUserID)) {
+                        if($row['ID'] == $UserID || $row['ID'] == $NewUserID) {
                         echo "id: " . $row['ID'] . " - Name: " . $row['first_name'] . " " . $row['last_name'] . " - Age: " . $row['age'] . "<br></br>";
-                    }
+                        }
+                    } 
                 } else {
                     echo "0 results";
                 }
