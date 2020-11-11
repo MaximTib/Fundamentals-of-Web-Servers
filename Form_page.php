@@ -35,6 +35,22 @@
         <input type="checkbox" id="idealhuman" name="idealhuman" value="idealhuman">
         <label for="opt3">I have at least 30 minutes of free time every day</label><br>
         <input type="submit"><br><br><br>
+
+        <button type="button" onclick="LED_HIGH()">LED HIGH</button>
+        <button type="button" onclick="LED_HIGH()">LED LOW</button>
+
+        <?php
+        function LED_HIGH() {
+            $output = shell_exec('gpio write 8 1');
+            echo "<div>$output</div>"; 
+        }
+ 
+        function LED_HIGH() {
+            $output = shell_exec('gpio write 8 0');
+            echo "<div>$output</div>"; 
+        }
+        ?>
+
     </form>
 </body>
 

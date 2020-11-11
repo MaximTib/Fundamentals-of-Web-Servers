@@ -2,6 +2,7 @@
     <html>
         <body>
             <?php
+                //checking for inputs to be true and if not user will get feedback on it
                 if (empty($_POST['fname'])) {
                     $fnamerr = "First name is required";
                 } else {
@@ -33,10 +34,7 @@
                 }
                 
 
-                
-
-                
-                    
+         
                 function test_input($data) {
                     $data = trim($data);
                     $data = stripslashes($data);
@@ -44,7 +42,7 @@
                     return $data;
                 }
 
-                echo "Welcome " . $firstname . "<br>"; 
+                echo "<br></br>Welcome " . $firstname . "<br>"; 
                 echo "Your last name is " . $lastname . "<br>";       
                 echo "It is good to know that you are " . $age . " years old.<br><br>"; 
 
@@ -58,7 +56,6 @@
                 }
 
                 
-                                                                        //foreach
                 if (isset($_POST['busy']) && test_input($_POST['busy']) == "busy") {
                     echo "I work am full time worker/student<br>"; 
                 } 
@@ -146,6 +143,7 @@
                 }
 
                 mysqli_close($conn);
+
             ?>
         </body>
     </html>
