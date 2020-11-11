@@ -37,7 +37,7 @@
         <input type="submit"><br><br><br>
 
         <button type="button" onclick="LED_HIGH()">LED HIGH</button>
-        <button type="button" onclick="LED_HIGH()">LED LOW</button>
+        <button type="button" onclick="LED_LOW()">LED LOW</button>
 
         <?php
         function LED_HIGH() {
@@ -45,7 +45,7 @@
             echo "<div>$output</div>"; 
         }
  
-        function LED_HIGH() {
+        function LED_LOW() {
             $output = shell_exec('gpio write 8 0');
             echo "<div>$output</div>"; 
         }
