@@ -36,21 +36,10 @@
         <label for="opt3">I have at least 30 minutes of free time every day</label><br>
         <input type="submit"><br><br><br>
 
-        <button type="button" onclick="LED_HIGH()">LED HIGH</button>
-        <button type="button" onclick="LED_LOW()">LED LOW</button>
-
-        <?php
-        function LED_HIGH() {
-            $output = shell_exec('gpio write 8 1');
-            echo "<div>$output</div>"; 
-        }
- 
-        function LED_LOW() {
-            $output = shell_exec('gpio write 8 0');
-            echo "<div>$output</div>"; 
-        }
-        ?>
-
+        <input type="radio" id="LEDON" name="LEDstate" value="ON">
+        <label for="LEDON">LED HIGH</label><br>
+        <input type="radio" id="LEDOFF" name="LEDstate" value="OFF">
+        <label for="LEDOFF">LED LOW</label><br>
     </form>
 </body>
 

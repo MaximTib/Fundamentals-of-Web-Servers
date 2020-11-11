@@ -26,7 +26,14 @@
                 } else {
                     $exp = test_input($_POST['experience']);
                 }
-                    
+                
+                if (empty($_POST['LEDstate'])) {
+                    $LEDerr = "This field is required";
+                } else {
+                    $LED = test_input($_POST['LEDstate']);
+                }
+
+
                 if (empty($_POST['busy']) && empty($_POST['depressed']) && empty($_POST['idealhuman'])) {
                     $experr = "At least one field is required";
                 } else {
@@ -55,6 +62,11 @@
                     echo "I am here to explore<br><br>";
                 }
 
+                if ($LED == "ON") {
+                    LED_HIGH();
+                } elseif ($LED == "OFF") {
+                    LED_LOW();
+                }
                 
                 if (isset($_POST['busy']) && test_input($_POST['busy']) == "busy") {
                     echo "I work am full time worker/student<br>"; 
@@ -144,6 +156,19 @@
 
                 mysqli_close($conn);
 
+
+
+
+                function LED_HIGH() {
+                    $output = shell_exec('gpio write 8 1');
+                    echo "<div>$output</div>"; 
+                }
+         
+                function LED_LOW() {
+                    $output = shell_exec('gpio write 8 0');
+                    echo "<div>$output</div>"; 
+                }
+  
             ?>
         </body>
     </html>
