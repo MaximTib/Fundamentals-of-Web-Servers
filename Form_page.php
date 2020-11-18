@@ -68,8 +68,8 @@
                         return '"style="background-color:Yellow;"';                       
                     } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
                         return '"style="background-color:Blue;"';                      
-                    }?>
-                }
+                    }
+                }?>
 
             <br></br>
             Choose a color to display as background of your submission form by selecting the correct binary code on the switches.
