@@ -41,6 +41,33 @@
         <input type="radio" id="LEDOFF" name="LEDstate" value="OFF">
         <label for="LEDOFF">LED LOW</label><br>
     </form>
+
+    <div>
+        <p <?php 
+                $output = shell_exec('gpio mode 1 in');
+                echo "<div>$output</div>";
+                $output = shell_exec('gpio mode 2 in');
+                echo "<div>$output</div>";
+                $output = shell_exec('gpio mode 3 in');
+                echo "<div>$output</div>";
+                $output = shell_exec('gpio mode 4 in');
+                echo "<div>$output</div>";
+                
+                $output = shell_exec('gpio read 4') & shell_exec('gpio read 3') & shell_exec('gpio read 2') & shell_exec('gpio read 1');
+                echo $output;
+                //if (shell_exec('gpio read 1')==1 && shell_exec('gpio read 3')==1?>>
+            <br></br>
+            Choose a color to display as background by selecting the correct binary code.
+            Orange = 3
+            Violet = 7
+            Yellow = 14
+            Blue = 8
+            <br></br>
+        </p>
+    </div>
+
+
+
 </body>
 
 </html>

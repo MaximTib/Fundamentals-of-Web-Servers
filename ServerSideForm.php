@@ -62,6 +62,9 @@
                     echo "I am here to explore<br><br>";
                 }
 
+
+                $output = shell_exec('gpio mode 8 out');
+                echo "<div>$output</div>";
                 if ($LED == "ON") {
                     LED_HIGH();
                 } elseif ($LED == "OFF") {
