@@ -73,10 +73,10 @@
 
             <br></br>
             Choose a color to display as background of your submission form by selecting the correct binary code on the switches.
-            <br></be>Orange = 3
-            <br></be>Violet = 7
-            <br></be>Yellow = 14
-            <br></be>Blue = 8
+            <br></br>Orange = 3
+            <br></br>Violet = 7
+            <br></br>Yellow = 14
+            <br></br>Blue = 8
             <br></br>
         </p>
     </form>
