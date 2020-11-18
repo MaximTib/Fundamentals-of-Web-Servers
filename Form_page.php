@@ -61,13 +61,13 @@
                     $pin2 = shell_exec('gpio read 2');
                     $pin1 = shell_exec('gpio read 1');
                     if ($pin4==0 && $pin3==0 && $pin2==1 && $pin1==1) {
-                        return "'style="background-color:Orange;'"';
+                        return '"style="background-color:Orange;"';
                     } elseif ($pin4==0 && $pin3==1 && $pin2==1 && $pin1==1) {
-                        return "'style="background-color:Violet;'"';                       
+                        return '"style="background-color:Violet;"';                       
                     } elseif ($pin4==1 && $pin3==1 && $pin2==1 && $pin1==0) {
-                        return "'style="background-color:Yellow;'"';                       
+                        return '"style="background-color:Yellow;"';                       
                     } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
-                        return ="'style="background-color:Blue;'"';                      
+                        return '"style="background-color:Blue;"';                      
                     }?>
                 }
 
