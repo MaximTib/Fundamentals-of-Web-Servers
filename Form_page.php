@@ -53,9 +53,10 @@
                 $output = shell_exec('gpio mode 4 in');
                 echo "<div>$output</div>";
                 
-                $output = shell_exec('gpio read 4') & shell_exec('gpio read 3') & shell_exec('gpio read 2') & shell_exec('gpio read 1');
+                $output = shell_exec('gpio read 4') && shell_exec('gpio read 3') && shell_exec('gpio read 2') && shell_exec('gpio read 1');
                 echo $output;
-                //if (shell_exec('gpio read 1')==1 && shell_exec('gpio read 3')==1?>>
+                //if ($ouput == 0011) {
+                //    $color ='"style="background-color:Orange;"';?>>
             <br></br>
             Choose a color to display as background by selecting the correct binary code.
             Orange = 3
