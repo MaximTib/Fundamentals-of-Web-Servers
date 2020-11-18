@@ -40,38 +40,49 @@
         <label for="LEDON">LED HIGH</label><br>
         <input type="radio" id="LEDOFF" name="LEDstate" value="OFF">
         <label for="LEDOFF">LED LOW</label><br>
-    </form>
+
+        
 
     <div>
-        <p <?php 
-                $output = shell_exec('gpio mode 1 in');
-                echo "<div>$output</div>";
-                $output = shell_exec('gpio mode 2 in');
-                echo "<div>$output</div>";
-                $output = shell_exec('gpio mode 3 in');
-                echo "<div>$output</div>";
-                $output = shell_exec('gpio mode 4 in');
-                echo "<div>$output</div>";
+    <p onmouseover="BackColor()">
+                <?php 
+                function BackColor() {
+                    $output = shell_exec('gpio mode 1 in');
+                    echo "<div>$output</div>";
+                    $output = shell_exec('gpio mode 2 in');
+                    echo "<div>$output</div>";
+                    $output = shell_exec('gpio mode 3 in');
+                    echo "<div>$output</div>";
+                    $output = shell_exec('gpio mode 4 in');
+                    echo "<div>$output</div>";
                 
-                $pin4 = shell_exec('gpio read 4'); 
-                $pin3 = shell_exec('gpio read 3');
-                $pin2 = shell_exec('gpio read 2');
-                $pin1 = shell_exec('gpio read 1');
-                echo $output;
-                if ($pin4==0 && $pin3==0 && $pin2==1 && $pin1) {
-                    $color ='"style="background-color:Orange;"';
-                    echo $color;
-                }?>>
+                    $pin4 = shell_exec('gpio read 4'); 
+                    $pin3 = shell_exec('gpio read 3');
+                    $pin2 = shell_exec('gpio read 2');
+                    $pin1 = shell_exec('gpio read 1');
+                    if ($pin4==0 && $pin3==0 && $pin2==1 && $pin1==1) {
+                        return "'style="background-color:Orange;'"';
+                    } elseif ($pin4==0 && $pin3==1 && $pin2==1 && $pin1==1) {
+                        return "'style="background-color:Violet;'"';                       
+                    } elseif ($pin4==1 && $pin3==1 && $pin2==1 && $pin1==0) {
+                        return "'style="background-color:Yellow;'"';                       
+                    } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
+                        return ="'style="background-color:Blue;'"';                      
+                    }?>
+                }
+
             <br></br>
-            Choose a color to display as background by selecting the correct binary code.
-            Orange = 3
-            Violet = 7
-            Yellow = 14
-            Blue = 8
+            Choose a color to display as background of your submission form by selecting the correct binary code on the switches.
+            <br></be>Orange = 3
+            <br></be>Violet = 7
+            <br></be>Yellow = 14
+            <br></be>Blue = 8
             <br></br>
         </p>
+    </form>
     </div>
 
+        
 
 
 </body>

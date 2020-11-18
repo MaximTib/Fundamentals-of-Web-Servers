@@ -70,6 +70,9 @@
                 } elseif ($LED == "OFF") {
                     LED_LOW();
                 }
+
+                
+                }
                 
                 if (isset($_POST['busy']) && test_input($_POST['busy']) == "busy") {
                     echo "I work am full time worker/student<br>"; 
