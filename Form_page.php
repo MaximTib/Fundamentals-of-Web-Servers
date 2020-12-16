@@ -43,8 +43,8 @@
 
         
 
-    <div>
-    <p onmouseover="BackColor()">
+        <div>
+        <p onmouseover="BackColor()">
                 <?php 
                 function BackColor() {
                     $output = shell_exec('gpio mode 1 in');
@@ -60,24 +60,27 @@
                     $pin3 = shell_exec('gpio read 3');
                     $pin2 = shell_exec('gpio read 2');
                     $pin1 = shell_exec('gpio read 1');
+                    $pins = $pin4 . $pin3 . $pin2 . $pin1;
+
                     if ($pin4==0 && $pin3==0 && $pin2==1 && $pin1==1) {
                         return '"style="background-color:Orange;"';
                     } elseif ($pin4==0 && $pin3==1 && $pin2==1 && $pin1==1) {
                         return '"style="background-color:Violet;"';                       
-                    } elseif ($pin4==1 && $pin3==1 && $pin2==1 && $pin1==0) {
+                    } elseif ($pin4==1 && $pin3==1 && $pin2==1 && $pin1==0             ) {
                         return '"style="background-color:Yellow;"';                       
                     } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
                         return '"style="background-color:Blue;"';                      
                     }
                 }?>
+        </div>
 
-            <br></br>
+            <br/>
             Choose a color to display as background of your submission form by selecting the correct binary code on the switches.
-            <br></br>Orange = 3
-            <br></br>Violet = 7
-            <br></br>Yellow = 14
-            <br></br>Blue = 8
-            <br></br>
+            <br/>Orange = 3
+            <br/>Violet = 7
+            <br/>Yellow = 14
+            <br/>Blue = 8
+            <br/>
         </p>
     </form>
     </div>
