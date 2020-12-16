@@ -19,7 +19,7 @@
 
 
                 //----------------redirecting user to the google search of the site---------------
-                header('Location: https://www.google.com/$search');
+                header('Location: https://www.google.com/'$_POST["search"])'');
 
                 $servername = "localhost";
                 $username = "Maxim";
