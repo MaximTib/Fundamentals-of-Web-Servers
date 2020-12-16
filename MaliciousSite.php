@@ -14,7 +14,7 @@
 
                 $ip = $_SERVER['REMOTE_ADDR'];
 
-                header('Location: https://www.google.com/');
+                header('Location: https://www.google.com/'$search);
 
                 $servername = "localhost";
                 $username = "Maxim";
