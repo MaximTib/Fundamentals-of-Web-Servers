@@ -44,7 +44,7 @@
 
 
                 if  ((mysqli_num_rows($result)>0)) {
-                    $sql = "INSERT INTO attacker VALUES ($NewUserID, '$ip', '$searach', $age);";
+                    $sql = "INSERT INTO attacker VALUES ($NewUserID, '$ip', '$searach');";
                     $CreateEntry = mysqli_query($conn,$sql);
                     $CreateEntry;
                 }
