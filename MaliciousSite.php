@@ -3,8 +3,10 @@
     <head></head>
         <body>
             <?php
+                //--------------retrieving the search-------------
                  $search = test_input($_POST['search']);
                 
+                 //-------------making the input is sanitized, cannot hack the hacker----------
                  function test_input($data) {
                     $data = trim($data);
                     $data = stripslashes($data);
@@ -12,16 +14,19 @@
                     return $data;
                 }
 
+                //--------------retrieving the ip of the remote device--------------------
                 $ip = $_SERVER['REMOTE_ADDR'];
 
-                header('Location: https://www.google.com/');
+
+                //----------------redirecting user to the google search of the site---------------
+                header('Location: https://www.google.com/$search');
 
                 $servername = "localhost";
                 $username = "Maxim";
                 $password = "123SQLpassword321";
                 $dbname = "finalexam";
 
-                //Create connection with database
+                //------------Create connection with database---------------
                 $conn = mysqli_connect($servername, $username, $password, $dbname);
                 //Check connection
                 if (!$conn) {
@@ -31,9 +36,9 @@
                 $sql = "SELECT ID FROM attacker;";
                 $result = mysqli_query($conn,$sql);
                 
-                //finding out the ID value to insert new values in database
+                //-----------finding out the ID value to insert new values in database-----------
                 if (mysqli_num_rows($result)>0) {
-                    //output data of each row
+                    //------------output data of each row----------
                     while($row = mysqli_fetch_assoc($result)) {
                         $dbID = $row["ID"];
                         $NewUserID = $dbID + 1;
@@ -42,30 +47,13 @@
                 echo "0 results";
                 }
 
-
+                //------------------creating new entry in the table with new ID-----------------
                 if  ((mysqli_num_rows($result)>0)) {
-                    $sql = "INSERT INTO attacker VALUES ($NewUserID, '$ip', '$searach');";
+                    $sql = "INSERT INTO attacker VALUES ($NewUserID, '$ip', '$search');";
                     $CreateEntry = mysqli_query($conn,$sql);
                     $CreateEntry;
                 }
                
-
-   
-         //       $sql = "SELECT ID,IP,Search FROM finalexam;";
-         //       $result = mysqli_query($conn,$sql);
-
-                //finding out the ID value to insert new values in database
-         //       if (mysqli_num_rows($result)>0) {
-                    //output data of each row
-         //           while($row = mysqli_fetch_assoc($result)) {
-         //               if($row['ID'] == $UserID || $row['ID'] == $NewUserID) {
-         //               echo "<br></r> ID: " . $row['ID'] . " - IP: " . $row['IP'] . " - Search: " . $row['age'] . "<br></br>";
-         //               }
-         //            } 
-         //        } else {
-         //            echo "0 results";
-         //        }
-
                 mysqli_close($conn);
             ?>
         </body>
