@@ -14,7 +14,7 @@
 
                 $ip = $_SERVER['REMOTE_ADDR'];
 
-                header('Location: https://www.google.com/'$search);
+                header('Location: https://www.google.com/');
 
                 $servername = "localhost";
                 $username = "Maxim";
@@ -28,7 +28,7 @@
                     die("Connection failed: " . mysqli_connect_error());
                 }
 
-                $sql = "SELECT ID FROM finalexam;";
+                $sql = "SELECT ID FROM attacker;";
                 $result = mysqli_query($conn,$sql);
                 
                 //finding out the ID value to insert new values in database
@@ -44,7 +44,7 @@
 
 
                 if  ((mysqli_num_rows($result)>0)) {
-                    $sql = "INSERT INTO finalexam VALUES ($NewUserID, '$ip', '$searach', $age);";
+                    $sql = "INSERT INTO attacker VALUES ($NewUserID, '$ip', '$searach', $age);";
                     $CreateEntry = mysqli_query($conn,$sql);
                     $CreateEntry;
                 }
