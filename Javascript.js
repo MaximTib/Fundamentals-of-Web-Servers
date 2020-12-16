@@ -1,8 +1,6 @@
 function OnlyLetters(fname, lname) {
     var letters = /^[A-Za-z]+$/;
 
-    alert(fname);
-    alert(lname);
     if ((fname.value.match(letters)) && (lname.value.match(letters))) {
         {
             return true;
@@ -29,6 +27,7 @@ function NumOnly(age) {
         return false;
     }
 }
+
 function NewImage() {
     document.getElementById("img1").src = "images/Corgi_image.jpg";
 }

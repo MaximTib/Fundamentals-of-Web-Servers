@@ -40,8 +40,6 @@
                     $exp = test_input($_POST['experience']);
                 }
                 
-
-         
                 function test_input($data) {
                     $data = trim($data);
                     $data = stripslashes($data);
@@ -75,7 +73,7 @@
                 
                 
                 if (isset($_POST['busy']) && test_input($_POST['busy']) == "busy") {
-                    echo "I work am full time worker/student<br>"; 
+                    echo "I am a full time worker/student<br>"; 
                 } 
                        
                 if (isset($_POST['depressed']) && test_input($_POST['depressed']) == "depressed") {

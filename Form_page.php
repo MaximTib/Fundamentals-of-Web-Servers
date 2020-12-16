@@ -29,7 +29,7 @@
         <div>Choose all that apply to you</div>
 
         <input type="checkbox" id="busy" name="busy" value="busy">
-        <label for="opt1">I work am full time worker/student</label><br>
+        <label for="opt1">I am a full time worker/student</label><br>
         <input type="checkbox" id="depressed" name="depressed" value="depressed">
         <label for="opt2">I am feeling lonely and seeking companionship</label><br>
         <input type="checkbox" id="idealhuman" name="idealhuman" value="idealhuman">

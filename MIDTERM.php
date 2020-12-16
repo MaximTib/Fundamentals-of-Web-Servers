@@ -34,7 +34,7 @@
                 }
             ?>
          
-            <form onsubmit="A_Function()">
+            <form onsubmit="AFunction()">
                     <label for="fname">First name:</label><br>
                     <input type="text" id="fname" name="fname"><br>
                     <label for="lname">Last name:</label><br>
@@ -60,7 +60,7 @@
                 function Afunction() {
                     var firstname = document.getElementByID("fname");
                     var lastname = document.getElementByID("lname");
-                    document.getElementById("username").innerHTML = "Your name is: " + firstname + " " + lastname;
+                    document.getElementById("NameDisplay").innerHTML = "Your name is: " + firstname + " " + lastname;
                 }
             </script>
         </body>
