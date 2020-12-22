@@ -29,9 +29,9 @@ function NumOnly(age) {
 }
 
 function NewImage() {
-    document.getElementById("img1").src = "images/Corgi_image.jpg";
+    document.getElementById("img1").src = "images/image_of_a_dog.jpg";
 }
 
 function OldImage() {
-    document.getElementById("img1").src = "images/image_of_a_dog.jpg";
+    document.getElementById("img1").src = "images/Corgi_image.jpg";
 }
