@@ -117,7 +117,7 @@
                     //output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
                         if($row['ID'] == $UserID || $row['ID'] == $NewUserID) {
-                        echo "<br></r> id: " . $row['ID'] . " - Name: " . $row['first_name'] . " " . $row['last_name'] . " - Age: " . $row['age'] . "<br></br>";
+                        echo "<br></r> Here is what we store in our database: Your ID - " . $row['ID'] . ", Name - " . $row['first_name'] . " " . $row['last_name'] . ", Age - " . $row['age'] . "<br></br>";
                         }
                     } 
                 } else {
