@@ -3,9 +3,7 @@
     <head>
         <script src="Javascript.js"></script>
     </head>
-
         <body>
-
             <h2>Form to fill out</h2>
 
             <form action="ServerSideForm.php" onsubmit="return (OnlyLetters(fname,lname) && NumOnly(age));" method="post">
@@ -34,11 +32,6 @@
                 <input type="checkbox" id="idealhuman" name="idealhuman" value="idealhuman">
                 <label for="opt3">I have at least 30 minutes of free time every day</label><br>
                 <input type="submit"><br><br><br>
-
-                <input type="radio" id="LEDON" name="LEDstate" value="ON">
-                <label for="LEDON">LED HIGH</label><br>
-                <input type="radio" id="LEDOFF" name="LEDstate" value="OFF">
-                <label for="LEDOFF">LED LOW</label><br>
             </form>
         </body>
 </html>
