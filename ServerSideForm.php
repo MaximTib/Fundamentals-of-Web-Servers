@@ -71,7 +71,7 @@
                        
                 if (isset($_POST['idealhuman']) && test_input($_POST['idealhuman']) == "idealhuman") {
                     echo "I have at least 30 minutes of free time every day<br><br>";
-                    echo "Also, Congratulations for being the ideal human for a dog!<br>"
+                    echo "Also, Congratulations for being the ideal human for a dog!<br>";
                 }
 
                 $servername = "localhost";
