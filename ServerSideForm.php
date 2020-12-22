@@ -47,6 +47,7 @@
                     return $data;
                 }
 
+
                 echo "<br></br>Welcome " . $firstname . "<br>"; 
                 echo "Your last name is " . $lastname . "<br>";       
                 echo "It is good to know that you are " . $age . " years old.<br><br>"; 
@@ -60,18 +61,7 @@
                     echo "I am here to explore<br><br>";
                 }
 
-
-                $output = shell_exec('gpio mode 8 out');
-                echo "<div>$output</div>";
-                if ($LED == "ON") {
-                    LED_HIGH();
-                } elseif ($LED == "OFF") {
-                    LED_LOW();
-                }
-
-                
-                
-                
+                                
                 if (isset($_POST['busy']) && test_input($_POST['busy']) == "busy") {
                     echo "I am a full time worker/student<br>"; 
                 } 
@@ -97,7 +87,6 @@
                 }
 
 
-
                 $sql = "SELECT ID FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
                 
@@ -112,36 +101,13 @@
                 echo "0 results";
                 }
 
-                $sql = "SELECT ID,first_name,last_name FROM PersonalData;";
-                $result = mysqli_query($conn,$sql);                
-                
-                //finding out the ID value to insert new values in database
-                function CheckForRecords(){
-                    if (mysqli_num_rows($result)>0) {
-                    //output data of each row
-                        while($row = mysqli_fetch_assoc($result)) {
-                            if (($row['first_name'] == $firstname) && ($row['last_name'] == $lastname)) {
-                                $UserID = $row['ID'];
-                                $sqlupdate = "UPDATE PersonalData SET age = $age WHERE ID = $UserID;";
-                                $resultupd = mysqli_query($conn,$sqlupdate);
-                                echo $resultupd;;
-                                return 1;
-                            }
-                        }   
-                    }
-                    return 0;
-                }
 
-                $Existance = CheckForRecords();
-
-
-                if  (($Existance == 0) && (mysqli_num_rows($result)>0)) {
+                if  (mysqli_num_rows($result)>0) {
                     $sql = "INSERT INTO PersonalData VALUES ($NewUserID, '$firstname', '$lastname', $age);";
                     $CreateEntry = mysqli_query($conn,$sql);
                     $CreateEntry;
                 }
                
-
    
                 $sql = "SELECT ID,first_name,last_name,age FROM PersonalData;";
                 $result = mysqli_query($conn,$sql);
@@ -161,8 +127,6 @@
                 mysqli_close($conn);
 
 
-
-
                 function LED_HIGH() {
                     $output = shell_exec('gpio write 8 1');
                     echo "<div>$output</div>"; 
@@ -172,7 +136,6 @@
                     $output = shell_exec('gpio write 8 0');
                     echo "<div>$output</div>"; 
                 }
-  
             ?>
         </body>
     </html>
