@@ -1,7 +1,9 @@
-function OnlyLetters(fname, lname) {
+function OnlyLetters() {
     var letters = /^[A-Za-z]+$/;
+    var firstn=document.getElementById("fname");
+    var lastn=document.getElementById("lname");
 
-    if ((fname.value.match(letters)) && (lname.value.match(letters))) {
+    if ((firstn.value.match(letters)) && (lastn.value.match(letters))) {
         {
             return true;
         }
@@ -12,18 +14,3 @@ function OnlyLetters(fname, lname) {
     }
 }
 
-function NumOnly(age) {
-    var numbers = /^[0-9]+$/;
-
-    alert(age);
-
-    if ((age.value.match(numbers)) {
-        alert("valid");
-        return true;
-    }
-
-    else {
-        alert("Enter a valid number");
-        return false;
-    }
-}

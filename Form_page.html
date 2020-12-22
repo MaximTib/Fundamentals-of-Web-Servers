@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="Javascript.js"></script>
-    </head>
+    <head></head>
         <body>
             <h2>Form to fill out</h2>
-
-            <form action="ServerSideForm.php" onsubmit="return (OnlyLetters(fname,lname) && NumOnly(age));" method="post">
+            <script src="Javascript.js"></script>
+            <form action="ServerSideForm.php" onsubmit="return (OnlyLetters());" method="post">
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname"><br>
                 <label for="lname">Last name:</label><br>
