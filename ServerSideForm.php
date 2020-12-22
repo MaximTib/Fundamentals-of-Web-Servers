@@ -47,7 +47,6 @@
                     return $data;
                 }
 
-
                 echo "<br></br>Welcome " . $firstname . "<br>"; 
                 echo "Your last name is " . $lastname . "<br>";       
                 echo "It is good to know that you are " . $age . " years old.<br><br>"; 
@@ -71,7 +70,8 @@
                 } 
                        
                 if (isset($_POST['idealhuman']) && test_input($_POST['idealhuman']) == "idealhuman") {
-                    echo "I have at least 30 minutes of free time every day<br>";
+                    echo "I have at least 30 minutes of free time every day<br><br>";
+                    echo "Also, Congratulations for being the ideal human for a dog!<br>"
                 }
 
                 $servername = "localhost";

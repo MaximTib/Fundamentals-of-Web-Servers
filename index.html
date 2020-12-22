@@ -11,10 +11,14 @@
         <br/>
         <div>Below are listed the dog breeds for which we provide information.</div>
         <ol>
-            <li>Corgi</li>
-            <li>Pitsky</li>
-            <li>Beagador</li>
-            <li>Golden Dox</li>
+            <li id="corgi">Corgi</li>
+            <button type="button" id="but1" onclick="button1" >Click for more</button>
+            <li id="pitsky">Pitsky</li>
+            <button type="button" id="but2" onclick="button2" >Click for more</button>
+            <li id="beagador">Beagador</li>
+            <button type="button" id="but3" onclick="button3" >Click for more</button>
+            <li id="golderdox">Golden Dox</li>
+            <button type="button" id="but4" onclick="button4" >Click for more</button>
         </ol>
 
         <script>
@@ -25,6 +29,24 @@
         function OldImage() {
             document.getElementById("img1").src = "images/Corgi_image.jpg";
         }
+
+        function button1() {
+            var x = 'hello';
+            document.getElementById("corgi").innerHTML = x;  
+        }
+
+        function button2() {
+            document.getElementById("pitsky").innerHTML = x;  
+        }
+
+        function button3() {
+            document.getElementById("beagador").innerHTML = x;  
+        }
+
+        function button4() {
+            document.getElementById("goldendox").innerHTML = x;  
+        }
+
         </script>
     </body>
 </html>
