@@ -73,8 +73,10 @@
                     } else {
                         $color=0;
                     }
+                    
+                    
                 ?>
-
+                <p><?php echo $color; ?></p>
                 <div>
                 <p id="gpio">Choose a color to display a fonted text instead of this one using the switches.</p>
                 <button type="button" onclick="Color()">Activate</button>
