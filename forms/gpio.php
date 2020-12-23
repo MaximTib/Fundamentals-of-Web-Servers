@@ -60,7 +60,7 @@
                 <!----------function to display fonted text------->
                 <script>
                 function Color() {
-                    var col = "<?php echo $color;?>";
+                    var col = "<?= $color?>";
                     alert("col");
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
