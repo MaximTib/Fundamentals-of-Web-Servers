@@ -79,6 +79,7 @@
 
                 <script>
                     var col = <?php echo $color; ?>;
+                    alert(col);
                 function Color() {
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
