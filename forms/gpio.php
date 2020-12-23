@@ -62,5 +62,7 @@
                 }
                 ?>
 
+                <h3><br/>Go fill out the form</h3>
+                <button type="button"  onclick="window.location.href = 'Form_page.html';">Click to go back to the form</button>
         </body>
 </html>
