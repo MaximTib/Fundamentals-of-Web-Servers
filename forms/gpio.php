@@ -10,7 +10,7 @@
                     <input type="radio" id="LEDOFF" name="LEDstate" value="OFF">
                     <label for="LEDOFF">LED LOW</label><br>
                     <input type="submit">
-                </form>
+                
 
                 <?php 
                     $output = shell_exec('gpio mode 1 in');
@@ -49,58 +49,31 @@
                 <br/>Blue = 8
                 <br/>
                 </div>
-
-                <?php 
-                    $output = shell_exec('gpio mode 1 in');
-                    echo "<div>$output</div>";
-                    $output = shell_exec('gpio mode 2 in');
-                    echo "<div>$output</div>";
-                    $output = shell_exec('gpio mode 3 in');
-                    echo "<div>$output</div>";
-                    $output = shell_exec('gpio mode 4 in');
-                    echo "<div>$output</div>";
-                
-                    $pin4 = shell_exec('gpio read 4'); 
-                    $pin3 = shell_exec('gpio read 3');
-                    $pin2 = shell_exec('gpio read 2');
-                    $pin1 = shell_exec('gpio read 1');
-
-                    if ($pin4==0 && $pin3==0 && $pin2==0 && $pin1==1) {
-                        $color=1;
-                    } elseif ($pin4==0 && $pin3==0 && $pin2==1 && $pin1==0) {
-                        $color=2;                       
-                    } elseif ($pin4==0 && $pin3==1 && $pin2==0 && $pin1==0) {
-                        $color=3;                       
-                    } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
-                        $color=4;                      
-                    } else {
-                        $color=0;
-                    }
-                ?>
+                </form>
 
                 <script>
                 function Color() {
-                    var col = "<?php echo $color; ?>";
+                    var col = "<?php echo $color;?>";
                     alert("col");
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
                         var result = text.fontcolor("orange");
-                    document.getElementById("gpio").innerHTML = result;
+                        document.getElementById("gpio").innerHTML = result;
                     } else if (col == 2) {
                         var text = "So you chose the color Violet!!";
                         var result = text.fontcolor("violet");
-                    document.getElementById("gpio").innerHTML = result;
+                        document.getElementById("gpio").innerHTML = result;
                     } else if (col == 4) {
                         var text = "So you chose the color Yellow!! The best color of them all";
                         var result = text.fontcolor("orange");
-                    document.getElementById("gpio").innerHTML = result;
+                        document.getElementById("gpio").innerHTML = result;
                     } else if (col == 8) {
                         var text = "So you chose the color Blue!!";
                         var result = text.fontcolor("blue");
-                    document.getElementById("gpio").innerHTML = result;
+                        document.getElementById("gpio").innerHTML = result;
                     } else (col == 1) {
                         var result = "Oops! Looks like you chose the wrong switch combination!";
-                    document.getElementById("gpio").innerHTML = result;
+                        document.getElementById("gpio").innerHTML = result;
                     }
                 }
                 </script>
