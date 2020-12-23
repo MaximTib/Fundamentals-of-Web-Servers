@@ -27,13 +27,6 @@
                     $exp = test_input($_POST['experience']);
                 }
                 
-                if (empty($_POST['LEDstate'])) {
-                    $LEDerr = "This field is required";
-                } else {
-                    $LED = test_input($_POST['LEDstate']);
-                }
-
-
                 if (empty($_POST['busy']) && empty($_POST['depressed']) && empty($_POST['idealhuman'])) {
                     $experr = "At least one field is required";
                 } else {
