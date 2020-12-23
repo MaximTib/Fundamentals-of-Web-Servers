@@ -74,13 +74,15 @@
                         $color=3;                       
                     } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
                         $color=4;                      
+                    } else {
+                        $color=0;
                     }
                 ?>
 
                 <script>
-                    var col = <?php echo $color; ?>;
-                    alert(col);
                 function Color() {
+                    var col = "<?php echo $color; ?>";
+                    alert(col);
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
                         var result = text.fontcolor("orange");
