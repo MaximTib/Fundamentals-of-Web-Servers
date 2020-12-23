@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
+                <?php 
+                    $output = shell_exec('gpio mode 1 in');
+                    echo "<div>$output</div>";
+                    $output = shell_exec('gpio mode 2 in');
+                    echo "<div>$output</div>";
+                    $output = shell_exec('gpio mode 3 in');
+                    echo "<div>$output</div>";
+                    $output = shell_exec('gpio mode 4 in');
+                    echo "<div>$output</div>";
+
+                    //--------------read input from ports------------
+                    $pin4 = shell_exec('gpio read 4'); 
+                    $pin3 = shell_exec('gpio read 3');
+                    $pin2 = shell_exec('gpio read 2');
+                    $pin1 = shell_exec('gpio read 1');
+     
+                    //-------------assining a value to color based on inputs--------
+                    if ($pin4==0 && $pin3==0 && $pin2==0 && $pin1==1) {
+                        $color=1;
+                    } elseif ($pin4==0 && $pin3==0 && $pin2==1 && $pin1==0) {
+                        $color=2;                       
+                    } elseif ($pin4==0 && $pin3==1 && $pin2==0 && $pin1==0) {
+                        $color=3;                       
+                    } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
+                        $color=4;                      
+                    } else {
+                        $color=0;
+                    }   
+                ?>
+                <p><?php echo $color; ?></p>
+                
         <!----------function to display fonted text------->
                 <script>
                 function Color() {
                     var col = "<?php echo $color ?>";
-                   // col = 4;
                     alert("color = "+ col);
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
@@ -72,11 +102,9 @@
                         $color=4;                      
                     } else {
                         $color=0;
-                    }
-                    
-                    
+                    }   
                 ?>
-                <p><?php echo $color; ?></p>
+
                 <div>
                 <p id="gpio">Choose a color to display a fonted text instead of this one using the switches.</p>
                 <button type="button" onclick="Color()">Activate</button>
