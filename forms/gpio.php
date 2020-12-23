@@ -5,7 +5,7 @@
                 <script>
                 function Color() {
                     var col = "<?= $color?>";
-                    alert(col);
+                    alert("color = "+ col +"");
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
                         var result = text.fontcolor("orange");
