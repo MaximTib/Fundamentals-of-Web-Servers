@@ -24,7 +24,7 @@
                         document.getElementById("gpio").innerHTML = result;
                     } else {
                         var result = "Oops! Looks like you chose the wrong switch combination!";
-                        document.getElementById("gpio").innerHTML = result;
+                        document.getElementById("gpio").innerHTML = col;
                     }
                 }
                 </script>
