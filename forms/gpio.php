@@ -41,7 +41,7 @@
 
                 <div>
                 <p id="gpio">Choose a color to display a fonted text instead of this one using the switches.</p>
-                <button type="button" onclick="Color()" >Activate</button>
+                <button type="button" onclick="Color()">Activate</button>
                 <br/>
                 <br/>Orange = 1
                 <br/>Violet = 2
@@ -64,13 +64,12 @@
                     $pin3 = shell_exec('gpio read 3');
                     $pin2 = shell_exec('gpio read 2');
                     $pin1 = shell_exec('gpio read 1');
-                    $pins = $pin4 . $pin3 . $pin2 . $pin1;
 
                     if ($pin4==0 && $pin3==0 && $pin2==0 && $pin1==1) {
                         $color=1;
                     } elseif ($pin4==0 && $pin3==0 && $pin2==1 && $pin1==0) {
                         $color=2;                       
-                    } elseif ($pin4==0 && $pin3==1 && $pin2==0 && $pin1==0             ) {
+                    } elseif ($pin4==0 && $pin3==1 && $pin2==0 && $pin1==0) {
                         $color=3;                       
                     } elseif ($pin4==1 && $pin3==0 && $pin2==0 && $pin1==0) {
                         $color=4;                      
@@ -82,7 +81,7 @@
                 <script>
                 function Color() {
                     var col = "<?php echo $color; ?>";
-                    alert(col);
+                    alert("col");
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
                         var result = text.fontcolor("orange");
