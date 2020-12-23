@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <!----------function to display fonted text------->
+                <script>
+                function Color() {
+                    var col = "<?= $color?>";
+                    alert("col");
+                    if (col == 1) {
+                        var text = "So you chose the color Orange!!";
+                        var result = text.fontcolor("orange");
+                        document.getElementById("gpio").innerHTML = result;
+                    } else if (col == 2) {
+                        var text = "So you chose the color Violet!!";
+                        var result = text.fontcolor("violet");
+                        document.getElementById("gpio").innerHTML = result;
+                    } else if (col == 4) {
+                        var text = "So you chose the color Yellow!! The best color of them all";
+                        var result = text.fontcolor("orange");
+                        document.getElementById("gpio").innerHTML = result;
+                    } else if (col == 8) {
+                        var text = "So you chose the color Blue!!";
+                        var result = text.fontcolor("blue");
+                        document.getElementById("gpio").innerHTML = result;
+                    } else {
+                        var result = "Oops! Looks like you chose the wrong switch combination!";
+                        document.getElementById("gpio").innerHTML = result;
+                    }
+                }
+                </script>
+    </head>
         <!-------backgound color-------->
         <body style="background-color:lightgrey;">
             <h1>Welcome to "Play with GPIO"</h1>
@@ -14,6 +42,7 @@
                     <input type="submit">
                 
 
+                
                 <!----------init the gpio ports on the pi---------->
                 <?php 
                     $output = shell_exec('gpio mode 1 in');
@@ -57,33 +86,7 @@
                 </div>
                 </form>
 
-                <!----------function to display fonted text------->
-                <script>
-                function Color() {
-                    var col = "<?= $color?>";
-                    alert("col");
-                    if (col == 1) {
-                        var text = "So you chose the color Orange!!";
-                        var result = text.fontcolor("orange");
-                        document.getElementById("gpio").innerHTML = result;
-                    } else if (col == 2) {
-                        var text = "So you chose the color Violet!!";
-                        var result = text.fontcolor("violet");
-                        document.getElementById("gpio").innerHTML = result;
-                    } else if (col == 4) {
-                        var text = "So you chose the color Yellow!! The best color of them all";
-                        var result = text.fontcolor("orange");
-                        document.getElementById("gpio").innerHTML = result;
-                    } else if (col == 8) {
-                        var text = "So you chose the color Blue!!";
-                        var result = text.fontcolor("blue");
-                        document.getElementById("gpio").innerHTML = result;
-                    } else (col == 1) {
-                        var result = "Oops! Looks like you chose the wrong switch combination!";
-                        document.getElementById("gpio").innerHTML = result;
-                    }
-                }
-                </script>
+               
 
 
                 <!----------php code to output high or low to the LED------------>
