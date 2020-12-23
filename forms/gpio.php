@@ -25,12 +25,12 @@
                     $output = shell_exec('gpio mode 4 in');
                     echo "<div>$output</div>";
                 
-                    $pin4 = shell_exec('gpio read 4'); 
+                    //$pin4 = shell_exec('gpio read 4'); 
                     //$pin3 = shell_exec('gpio read 3');
                     //$pin2 = shell_exec('gpio read 2');
-                   // $pin1 = shell_exec('gpio read 1');
+                    $pin1 = shell_exec('gpio read 1');
 
-                    if ($pin4==0) { //&& $pin3==0 && $pin2==1 && $pin1==1) {
+                    if ($pin1==0) { //&& $pin3==0 && $pin2==1 && $pin1==1) {
                         return '"style="background-color:Orange;"';
                     } //elseif ($pin4==0 && $pin3==1 && $pin2==1 && $pin1==1) {
                     //    return '"style="background-color:Violet;"';                       
@@ -59,6 +59,16 @@
                     LED_HIGH();
                 } elseif ($LED == "OFF") {
                     LED_LOW();
+                }
+                
+                function LED_HIGH() {
+                    $output = shell_exec('gpio write 8 1');
+                    echo "<div>$output</div>"; 
+                }
+         
+                function LED_LOW() {
+                    $output = shell_exec('gpio write 8 0');
+                    echo "<div>$output</div>"; 
                 }
                 ?>
 

@@ -127,15 +127,7 @@
                 mysqli_close($conn);
 
 
-                function LED_HIGH() {
-                    $output = shell_exec('gpio write 8 1');
-                    echo "<div>$output</div>"; 
-                }
-         
-                function LED_LOW() {
-                    $output = shell_exec('gpio write 8 0');
-                    echo "<div>$output</div>"; 
-                }
+                
             ?>
         </body>
     </html>
