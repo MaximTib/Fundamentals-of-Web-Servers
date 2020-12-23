@@ -4,8 +4,8 @@
         <!----------function to display fonted text------->
                 <script>
                 function Color() {
-                    var col = "<?= $color?>";
-                    alert("color = "+ col +"");
+                    var col = "<?= $color;?>";
+                    alert("color = "+ col);
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
                         var result = text.fontcolor("orange");
