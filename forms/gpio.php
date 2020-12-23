@@ -4,8 +4,8 @@
         <!----------function to display fonted text------->
                 <script>
                 function Color() {
-                    var col = "<?php $color;?>";
-                    col = 4;
+                    var col = "<?php echo $color ?>";
+                   // col = 4;
                     alert("color = "+ col);
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
@@ -15,11 +15,11 @@
                         var text = "So you chose the color Violet!!";
                         var result = text.fontcolor("violet");
                         document.getElementById("gpio").innerHTML = result;
-                    } else if (col == 4) {
+                    } else if (col == 3) {
                         var text = "So you chose the color Yellow!! The best color of them all";
                         var result = text.fontcolor("orange");
                         document.getElementById("gpio").innerHTML = result;
-                    } else if (col == 8) {
+                    } else if (col == 4) {
                         var text = "So you chose the color Blue!!";
                         var result = text.fontcolor("blue");
                         document.getElementById("gpio").innerHTML = result;
