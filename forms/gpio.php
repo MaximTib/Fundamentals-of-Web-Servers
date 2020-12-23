@@ -5,6 +5,7 @@
                 <script>
                 function Color() {
                     var col = "<?php $color;?>";
+                    col = 4;
                     alert("color = "+ col);
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
