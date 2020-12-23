@@ -4,7 +4,7 @@
         <!----------function to display fonted text------->
                 <script>
                 function Color() {
-                    var col = "<?php echo $color;?>";
+                    var col = "<?php $color;?>";
                     alert("color = "+ col);
                     if (col == 1) {
                         var text = "So you chose the color Orange!!";
@@ -24,7 +24,7 @@
                         document.getElementById("gpio").innerHTML = result;
                     } else {
                         var result = "Oops! Looks like you chose the wrong switch combination!";
-                        document.getElementById("gpio").innerHTML = col;
+                        document.getElementById("gpio").innerHTML = result;
                     }
                 }
                 </script>
